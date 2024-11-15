@@ -1,0 +1,64 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1725531758646-1
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: chapter_impressions
+                  type: VARCHAR(255 BYTE)
+            tableName: reviews
+  - changeSet:
+      id: 1725531758646-2
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: favorite_learning_tool_of_the_chapter
+                  type: VARCHAR(255 BYTE)
+            tableName: reviews
+  - changeSet:
+      id: 1725531758646-3
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: improvement_suggestion
+                  type: VARCHAR(255 BYTE)
+            tableName: reviews
+  - changeSet:
+      id: 1725531758646-4
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: reason_favorite_learning_tool_of_the_chapter
+                  type: VARCHAR(255 BYTE)
+            tableName: reviews
+  - changeSet:
+      id: 1725531758646-5
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: why_recommending_this_course
+                  type: VARCHAR(255 BYTE)
+            tableName: reviews
+  - changeSet:
+      id: 1725531758646-6
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: course_id
+                  type: BIGINT(19)
+            tableName: reviews
+

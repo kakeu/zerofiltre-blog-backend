@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1707661217579-1
+    author: philippe SIMO (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: completed_at
+            type: DATETIME
+        tableName: enrollment_completed_lessons
+

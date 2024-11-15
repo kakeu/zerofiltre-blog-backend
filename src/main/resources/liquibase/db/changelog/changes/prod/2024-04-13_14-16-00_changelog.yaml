@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1713017771280-1
+    author: philippe SIMO (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: premium
+            type: BIT(1)
+        tableName: article
+

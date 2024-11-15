@@ -1,0 +1,83 @@
+databaseChangeLog:
+- changeSet:
+    id: 1704866816492-1
+    author: philippe SIMO (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              nullable: false
+              primaryKey: true
+            name: id
+            type: BIGINT
+        - column:
+            name: at
+            type: datetime
+        - column:
+            name: course_id
+            type: BIGINT
+        - column:
+            name: user_id
+            type: BIGINT
+        tableName: purchase
+- changeSet:
+    id: 1704866816492-2
+    author: philippe SIMO (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: sandbox_type
+            type: VARCHAR(255 BYTE)
+        tableName: course
+- changeSet:
+    id: 1704866816492-3
+    author: philippe SIMO (generated)
+    changes:
+    - addUniqueConstraint:
+        columnNames: user_id, course_id
+        constraintName: UniquePurchasePerUserIdAndCourseId
+        tableName: purchase
+- changeSet:
+    id: 1704866816492-4
+    author: philippe SIMO (generated)
+    changes:
+    - createIndex:
+        columns:
+        - column:
+            name: course_id
+        indexName: FK1p8k2mby007nu77e2jbtd34ux
+        tableName: purchase
+- changeSet:
+    id: 1704866816492-5
+    author: philippe SIMO (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: course_id
+        baseTableName: purchase
+        constraintName: FK1p8k2mby007nu77e2jbtd34ux
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: id
+        referencedTableName: course
+        validate: true
+- changeSet:
+    id: 1704866816492-6
+    author: philippe SIMO (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: user_id
+        baseTableName: purchase
+        constraintName: FK86i0stm7cqsglqptdvjij1k3m
+        deferrable: false
+        initiallyDeferred: false
+        onDelete: RESTRICT
+        onUpdate: RESTRICT
+        referencedColumnNames: id
+        referencedTableName: user
+        validate: true
+

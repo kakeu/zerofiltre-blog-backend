@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1713424963963-1
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: video
+                  type: VARCHAR(255 BYTE)
+            tableName: article
+

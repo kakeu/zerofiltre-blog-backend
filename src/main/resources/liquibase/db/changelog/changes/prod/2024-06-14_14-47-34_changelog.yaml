@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1718376528816-1
+      author: philippe SIMO (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: at
+                  type: datetime
+              - column:
+                  constraints:
+                    unique: true
+                  name: reference
+                  type: VARCHAR(255)
+              - column:
+                  name: user_id
+                  type: BIGINT
+              - column:
+                  name: status
+                  type: VARCHAR(255)
+              - column:
+                  name: recurring_interval
+                  type: VARCHAR(255)
+            tableName: payment
+  - changeSet:
+      id: 1718376528816-2
+      author: philippe SIMO (generated)
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: user_id
+            indexName: FK4spfnm9si9dowsatcqs5or42i
+            tableName: payment
+  - changeSet:
+      id: 1718376528816-3
+      author: philippe SIMO (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: payment
+            constraintName: FK4spfnm9si9dowsatcqs5or42i
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: user
+            validate: true
+

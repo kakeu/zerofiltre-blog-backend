@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1726988261018-1
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: certificate_path
+                  type: VARCHAR(255 BYTE)
+            tableName: enrollment
+

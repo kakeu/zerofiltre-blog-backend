@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1699779016654-1
+    author: philippe SIMO (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: social_id
+            type: VARCHAR(255 BYTE)
+        tableName: user
+

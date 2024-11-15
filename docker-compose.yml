@@ -1,0 +1,29 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_USER: blog_api_dev
+      MYSQL_ROOT_PASSWORD: blog_api_dev
+      MYSQL_DATABASE: blogapidb_dev
+      MYSQL_USER: blog_api_dev
+      MYSQL_PASSWORD: blog_api_dev
+
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./initV.sql:/docker-entrypoint-initdb.d/initV.sql
+
+
+  redis:
+    image: redis
+    container_name: zerofiltre-local-redis
+    ports :
+      - "6379:6379"
+    restart: unless-stopped
+
+
+volumes:
+  mysql-data:

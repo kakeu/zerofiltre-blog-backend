@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1706730544298-1
+    author: philippe SIMO (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: mentored
+            type: BIT(1)
+        tableName: course
+

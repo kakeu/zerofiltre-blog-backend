@@ -1,0 +1,109 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1723734545843-1
+      author: philippe SIMO (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: chapter_explanations
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: chapter_satisfaction_score
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: chapter_understanding_score
+                  type: INT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: overall_chapter_satisfaction
+                  type: INT
+              - column:
+                  name: recommend_course
+                  type: VARCHAR(255)
+              - column:
+                  constraints:
+                    nullable: false
+                  name: chapter_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: user_id
+                  type: BIGINT
+            tableName: reviews
+  - changeSet:
+      id: 1723734545843-2
+      author: philippe SIMO (generated)
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: for_life
+                  type: BIT(1)
+            tableName: enrollment
+  - changeSet:
+      id: 1723734545843-3
+      author: philippe SIMO (generated)
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: chapter_id
+            indexName: FK61mbapjs1bba7ysadqv1k812q
+            tableName: reviews
+  - changeSet:
+      id: 1723734545843-4
+      author: philippe SIMO (generated)
+      changes:
+        - createIndex:
+            columns:
+              - column:
+                  name: user_id
+            indexName: FKsdlcf7wf8l1k0m00gik0m6b1m
+            tableName: reviews
+  - changeSet:
+      id: 1723734545843-5
+      author: philippe SIMO (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: chapter_id
+            baseTableName: reviews
+            constraintName: FK61mbapjs1bba7ysadqv1k812q
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: chapter
+            validate: true
+  - changeSet:
+      id: 1723734545843-6
+      author: philippe SIMO (generated)
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: user_id
+            baseTableName: reviews
+            constraintName: FKsdlcf7wf8l1k0m00gik0m6b1m
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: RESTRICT
+            onUpdate: RESTRICT
+            referencedColumnNames: id
+            referencedTableName: user
+            validate: true
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        body {
+            font-family: 'Aria', sans-serif;
+        }
+
+        h1 {
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+
+        .espace_ligne {
+            line-height: 2em;
+        }
+
+        .container {
+            margin: 0 auto;
+            height: 90%;
+            width: 90%;
+            background-color: #ffffff;
+            word-break: break-word;
+            font-size: 16px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            /*font-size: 10px;*/
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <img th:src="${attachement}" alt="Zerofiltre change des vies et des finances grâce à l'IT">
+        <h1>Certificat de fin de parcours</h1>
+    </div>
+
+    <p class="espace_ligne">Je, soussigné <strong>Monsieur Philippe Fabrice GUEMKAM SIMO</strong>, représentant légal de l'organisme Zerofiltre,
+     atteste que <strong><span th:text="${fullName}"></span></strong> a suivi toutes les leçons du parcours:</p>
+
+    <h2><span th:text="${courseTitle}"></span></h2>
+
+    <p>En foi de quoi, le présent certificat est délivré pour servir et valoir ce que de droit.</p>
+    <p>Fait au Bourget, le <strong><span th:text="${today}"></span></strong></p>
+    <p><strong>Philippe Fabrice GUEMKAM SIMO</strong></p>
+
+    <br/>
+    <br/>
+    <p><em th:text="#{zerofiltre_team_signature}"></em></p>
+
+
+    <div class="footer">
+        <p>Zerofiltre</p>
+        <p>72 AV DE LA DIVISION LECLERC</p>
+        <p>93350 LE BOURGET</p>
+        <p>zerofiltre.tech</p>
+        <p>info@zerofiltre.tech</p>
+        <p><a href="https://www.linkedin.com/company/65767867/admin/" class="linkedin-button" target="_blank">in</a>
+        </p>
+        <p>&copy; <span th:text="${#dates.format(#dates.createNow(), 'yyyy')}"></span> Zerofiltre</p>
+    </div>
+</div>
+</body>
+</html>
